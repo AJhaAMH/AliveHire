@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - John Doe</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      color: #000;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 3px;
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 15px;
+      margin: 8px 0 0 0;
+      font-weight: bold;
+    }
+    .header {
+      margin-bottom: 20px;
+    }
+    .subheader {
+      font-size: 16px;
+      color: #444;
+      margin: 0;
+    }
+    .contact {
+      margin-top: 5px;
+      font-size: 13px;
+    }
+    .contact a {
+      color: #000;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    ul {
+      margin: 5px 0 0 15px;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 3px;
+    }
+    .section p {
+      margin: 5px 0;
+    }
+    .role {
+      font-weight: bold;
+    }
+    .meta {
+      font-size: 13px;
+      color: #444;
+    }
+    .keywords {
+      font-size: 12px;
+      color: #555;
+      margin-top: 5px;
+    }
+.two-col {
+      display: flex;
+      justify-content: space-between;
+    }
+.left, .right {
+      width: 48%;
+    }
+    .ex
+    /* Export button */
+    .export-btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .export-btn:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+  <!-- Export Button -->
+  <button class="export-btn" onclick="downloadPDF()">⬇ Export to PDF</button>
+
+  <!-- Resume Content -->
+  <div id="resume">
+    <!-- Header -->
+    <div class="header">
+      <h1>John <b>Doe</b></h1>
+      <p class="subheader">Senior Software Engineer</p>
+      <p class="contact">
+        📍 Bengaluru, IN |
+        ✉️ <a href="mailto:john@example.com">john@example.com</a> |
+        📞 +91 98765 43210 <br>
+        🔗 <a href="johndoe.dev">johndoe.dev</a> |
+        <a href="https://www.linkedin.com/in/theraviverma/">linkedin.com/in/johndoe</a> |
+        <a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects">github.com/johndoe</a>
+      </p>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+      <h2>Professional Summary</h2>
+      <p>
+        Full-stack engineer (7+ yrs) building and scaling modern web platforms. Deep in Laravel, React, Node.js, and AWS with strong focus on performance, clean architecture, and DX. Led cross-functional projects and mentored teams to deliver high-impact features.
+      </p>
+    </div>
+
+   <!-- Core Competencies -->
+    <div class="section">
+      <h2>CORE COMPETENCIES</h2>
+      <div class="two-col">
+        <div class="left">
+          <ul>
+            <li>Full-Stack Web Development</li>
+            <li>System Design & Architecture</li>
+            <li>API Dev (REST/GraphQL/gRPC)</li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul>
+            <li>Cloud Infra (AWS, Docker, K8s)</li>
+            <li>Database Optimization</li>
+            <li>Observability & Performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <h2>Skills</h2>
+      <p><b>Languages</b> – PHP 8, TypeScript, JavaScript, Python</p>
+      <p><b>Frameworks</b> – Laravel, NestJS, Express, React, Next.js</p>
+      <p><b>Databases</b> – MySQL, PostgreSQL, MongoDB, Redis</p>
+      <p><b>Cloud & DevOps</b> – AWS (EC2/S3/RDS/Lambda), Docker, Kubernetes, Terraform</p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+      <h2>Experience</h2>
+      <h3>2023 – Present</h3>
+      <p class="role">Senior Software Engineer | Google</p>
+      <p class="meta">Tech Giant | Full-Time | Bengaluru, IN</p>
+      <ul>
+        <li>Refactored reporting pipeline; BigQuery cost ↓31% via partitioning/clustering.</li>
+        <li>Wrote ADRs for event-driven architecture; mentored 5 engineers.</li>
+      </ul>
+      <p class="keywords">Keywords: BigQuery, Event-Driven, Mentorship, Cost Optimization</p>
+
+      <h3>2021 – 2023</h3>
+      <p class="role">Software Engineer II | Microsoft</p>
+      <p class="meta">Product Company | Full-Time | Hyderabad, IN</p>
+      <ul>
+        <li>Multi-region API gateway (Azure Front Door + APIM), p95 latency ↓42%.</li>
+        <li>Introduced OpenAPI schema checks and contract tests in CI.</li>
+      </ul>
+      <p class="keywords">Keywords: Azure, API Gateway, OpenAPI, CI/CD</p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h2>Education</h2>
+      <p class="role">M.Tech, Software Engineering – IIT Bombay</p>
+      <p class="meta">2018 – 2020 | Full-Time | CGPA: 9.1/10 | Mumbai</p>
+      <p class="keywords">Specialized in software architecture, microservices, and system design. Skills: Microservices, System Design, DevOps</p>
+
+      <p class="role">B.Tech, Computer Science – IIT Delhi</p>
+      <p class="meta">2014 – 2018 | Full-Time | CGPA: 8.9/10 | Delhi</p>
+      <p class="keywords">Major in Computer Science | Skills: Java, DSA, Algorithms</p>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <h2>Projects</h2>
+      <p class="role">Resume Builder (<a href="#">GitHub</a>)</p>
+      <p class="meta">2023 | Web Application | Laravel, React, JSON Templates, PDF Export</p>
+      <ul>
+        <li>Resume builder with dynamic templates using Laravel + React, exporting with Browsershot.</li>
+        <li>Template-driven generation in React.</li>
+        <li>Browsershot integration for high-quality PDF.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JS for Export -->
+  <script>
+    function downloadPDF() {
+      const resume = document.getElementById("resume");
+      const opt = {
+        margin: 0.5,
+        filename: 'John_Doe_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(resume).save();
+    }
+  </script>
+</body>
+</html>

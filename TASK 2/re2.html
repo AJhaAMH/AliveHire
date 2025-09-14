@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - John Doe</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+ @page {
+      margin: 0; /* removes top, left, and right margins */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 10px;
+      background: #fff;
+      color: #000;
+    }
+    .container {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 0 7mm;
+      background: white;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      color: #006400;
+      margin-bottom: 0;
+    }
+ .yellow-line {
+      width: 100%;
+      height: 3px;
+      background-color: #FFD700; /* Yellow line */
+      margin: 5px 0 10px 10;
+    }
+    .contact {
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+    .contact a {
+      color: #000000;
+      text-decoration: none;
+      margin:  0 10px;
+    }
+    h2 {
+      color: #006400;
+      font-size: 18px;
+      border-bottom: none;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .section {
+      margin-bottom: 0 10px 10px 10px;
+    }
+    .job {
+      margin-bottom: 15px;
+    }
+    .job-title {
+margin-top: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .job-date {
+      float: right;
+      font-size: 13px;
+    }
+    .client {
+      font-style: italic;
+      font-size: 13px;
+      margin-bottom: 5px;
+      color: #000000;
+    }
+    ul {
+      margin: 5px 0 10px 20px;
+      font-size: 13px;
+    }
+    .edu, .projects {
+      font-size: 13px;
+    }
+.two-col {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left, .right {
+      width: 48%;
+    }
+    button {
+      display: block;
+      margin: 15px auto;
+      padding: 10px 20px;
+      background: #006400;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #228B22;
+    }
+.my-bold-text {
+        font-size: 18px;
+        color: #006400;
+      }
+
+  </style>
+</head>
+<body>
+
+  <button onclick="downloadPDF()">Export as PDF</button>
+
+  <div class="container" id="resume">
+    <h1>John Doe</h1> <div class="yellow-line"></div>
+    <div class="contact">
+      <i class="fa-solid fa-phone"></i> 123-456-7890  -- <a href="mailto:john@example.com">✉user@domain.tld </a>-- 
+      <a href="https://www.linkedin.com/in/theraviverma/"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/USER</a>--
+      <a href="https://github.com/Ayushparikh-code/Web-dev-mini-projects"><i class="fa-brands fa-github"></i> github.com/USER</a>
+    </div>
+ <div class="yellow-line"></div>
+    <div class="section">
+      <p><b class="my-bold-text">Summary</b>— Simplified version of a monstrosity that I built back in college using current best practices. </p>  </div>
+
+    <div class="section">
+      <h2>Skills</h2><div class="yellow-line"></div>
+      <div class="two-col">
+      <div class="left">
+      <p><strong>Automation:</strong> SaltStack, Ansible, Chef, Puppet<br>
+      <strong>Cloud:</strong> Salt-Cloud, Linode, GCP, AWS<br>
+      <strong>Languages:</strong> Python, Bash, PHP, Perl, VB/C#.Net</p>
+      </div>
+      <div class="right">
+      <p><strong>OS:</strong> Debian, Ubuntu, CentOS, BSD, AIX<br>
+      <strong>Policies:</strong> CIS, SOC2, PCI-DSS, GDPR, ITIL<br>
+      <strong>Testing:</strong> Pytest, Docker, CircleCI, Jenkins, Inspec</p>
+    
+</div>
+</div>
+
+    <div class="section">
+      <h2>Experience</h2><div class="yellow-line"></div>
+      
+      <div class="job">
+        <div class="job-title">Consulting Corp <span class="job-date">Jul 2015 – Jun 2025</span></div>
+        <div class="client">Senior DevOps Engineer (FTE Consultant)</div>
+        <div class="client">Client: Notable Placement</div>
+        <ul>
+          <li>Analyzed network traffic patterns to identify bottlenecks and optimize performance</li>
+          <li>Implemented firewall rules to enhance network security and prevent unauthorized access</li>
+          <li>Conducted regular vulnerability assessments and applied patches to secure systems</li>
+          <li>Collaborated with cross-functional teams to streamline IT processes and improve efficiency</li>
+        </ul>
+
+        <div class="client">Client: Challenges Unlimited</div>
+        <ul>
+          <li>Configured monitoring tools to track system performance and troubleshoot issues proactively</li>
+          <li>Automated routine tasks using scripts to reduce manual effort and increase productivity</li>
+          <li>Documented system configurations and procedures for knowledge sharing within the team</li>
+          <li>Participated in disaster recovery planning and drills to ensure business continuity in case of emergencies</li>
+        </ul>
+
+        <div class="client">Client: Broken Galleries</div>
+        <ul>
+          <li>Implemented cloud migration strategies to move applications to a hybrid environment</li>
+          <li>Optimized database performance through indexing and query tuning techniques</li>
+          <li>Conducted capacity planning and scalability assessments to support future growth</li>
+          <li>Provided on-call support for critical issues and worked on root cause analysis for incident resolution</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-title">HealthCo Industries <span class="job-date">Feb 2011 – Mar 2016</span></div>
+        <div class="client">Senior Systems Administrator (SRE)</div>
+        <ul>
+          <li>Managed virtualized server environment spanning multiple data centers</li>
+          <li>Oversaw and prioritized critical business applications including firewalls and intrusion detection systems</li>
+          <li>Configured and monitored network security, measures, handling firewalls and intrusion detection systems</li>
+          <li>Implemented multi-factor authentication for remote workers</li>
+          <li>Conducted regular vulnerability assessments and remediation tasks</li>
+          <li>Automated server provisioning and configuration management</li>
+          <li>Created technical documentation for processes and procedures</li>
+          <li>Standardized responses to cybersecurity incidents with internal teams and external vendors</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2><div class="yellow-line"></div>
+      <p class="edu"><strong>State University</strong><br>
+      Bachelor of Science in Computer Information Systems<br>
+      Minor: Networking • Network Security</p>
+      <p class="edu"><strong>Certifications</strong><br>
+      • Salt - SaltStack Certified Engineer<br>
+      • GCP - Professional Cloud Architect</p>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2><div class="yellow-line"></div>
+      <p class="projects"><strong>Hospital / Health Science IRB</strong> <span class="job-date">Mar 2015 – Present</span><br>
+      • Served as non-scientist/unaffiliated patient-representative<br>
+      • Reviewed and signed consent forms for completeness, accuracy, and clarity<br>
+      • Became familiar with industry standards and regulations (OHRP, HIPAA)</p>
+
+      <p class="projects"><strong>Debian Linux</strong> <span class="job-date">Jan 2001 – Present</span><br>
+      • Maintained packages in Debian repositories<br>
+      • Reviewed and sponsored package uploads on behalf of prospective Developers<br>
+      • Researched bugs reported in bug tracking system</p>
+    </div>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("resume");
+      const opt = {
+        margin: 0,
+        filename: 'Resume_John_Doe.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+
+</body>
+</html>
